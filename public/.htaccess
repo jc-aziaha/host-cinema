@@ -4,7 +4,7 @@ RewriteEngine On
 # ----------------------------
 # 1. Page par défaut
 # Si l'utilisateur accède à /, afficher index.php
-# DirectoryIndex index.php
+DirectoryIndex index.php
 # ----------------------------
 
 # ----------------------------
@@ -12,5 +12,5 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^(.*)$ index.php [L]
+# RewriteRule ^(.*)$ index.php [L]
 # ----------------------------
