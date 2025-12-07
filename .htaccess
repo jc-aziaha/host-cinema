@@ -1,9 +1,8 @@
-# Activer le module de réécriture
 RewriteEngine On
 
-# Si la requête ne correspond pas à un fichier ou dossier à la racine
+# Si le fichier ou dossier demandé existe à la racine, ne rien faire
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Rediriger en interne vers le dossier public sans changer l'URL
+# Redirection interne vers public/
 RewriteRule ^(.*)$ public/$1 [L]
