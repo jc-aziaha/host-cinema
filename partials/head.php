@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?= isset($title) ? $title : ''; ?> - Cinema</title>
+        <title><?= isset($title) ? $title : ''; ?> - Mr POPCORN</title>
 
         <!-- Seo -->
         <meta name="robots" content="index, follow">

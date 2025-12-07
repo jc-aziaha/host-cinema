@@ -42,14 +42,16 @@ session_start();
                                 <h2>Titre: <?= htmlspecialchars($film['title']); ?></h2>
                                 <p><strong>Note</strong>: <?= $film['rating'] == null ? 'Non renseignée' : displayStars((float) $film['rating']); ?></p>
                                 <hr>
-                                <a href="/show.php?film_id=<?= htmlspecialchars($film['id']); ?>" class="btn btn-sm btn-dark">Voir détails</a>
-                                <a href="/edit.php?film_id=<?= htmlspecialchars($film['id']); ?>" class="btn btn-sm btn-secondary">Modifier</a>
-                                <form action="/delete.php" method="post" class="d-inline">
-                                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
-                                    <input type="hidden" name="honey_pot"  value="">
-                                    <input type="hidden" name="film_id"    value="<?= $film['id'] ?>">
-                                    <input type="submit" onclick="return confirm('Confirmer la suppression?')" class="btn btn-sm btn-danger" value="Supprimer">
-                                </form>
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <a href="/show.php?film_id=<?= htmlspecialchars($film['id']); ?>" class="m-1 btn btn-sm btn-dark">Voir détails</a>
+                                    <a href="/edit.php?film_id=<?= htmlspecialchars($film['id']); ?>" class="m-1 btn btn-sm btn-secondary">Modifier</a>
+                                    <form action="/delete.php" method="post" class="m-1 d-inline">
+                                        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
+                                        <input type="hidden" name="honey_pot"  value="">
+                                        <input type="hidden" name="film_id"    value="<?= $film['id'] ?>">
+                                        <input type="submit" onclick="return confirm('Confirmer la suppression?')" class="btn btn-sm btn-danger" value="Supprimer">
+                                    </form>
+                                </div>
                             </article>
                             <hr>
                         <?php endforeach ?>
