@@ -1,18 +1,4 @@
-# Activer le module de réécriture
 RewriteEngine On
 
-# ----------------------------
-# 1. Sécuriser la racine
-# Empêcher l'accès à tous les fichiers et dossiers à la racine sauf le dossier public
-<If "%{REQUEST_URI} !^/public/">
-    Require all denied
-</If>
-# ----------------------------
-
-# ----------------------------
-# 2. Redirection interne vers public/
-# Si le fichier ou dossier n'existe pas à la racine, le servir depuis public/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ public/$1 [L]
-# ----------------------------
+# Redirection interne vers public/
+RewriteRule ^(.*)$ public/
