@@ -1,8 +1,4 @@
 RewriteEngine On
 
-# Si le fichier ou dossier demandé existe à la racine, ne rien faire
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
 # Redirection interne vers public/
-RewriteRule ^(.*)$ public/$1 [L]
+RewriteRule ^(.*)$ public/ [L]
