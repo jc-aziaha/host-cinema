@@ -1,4 +1,0 @@
-RewriteEngine On
-
-# Redirection interne vers public/
-RewriteRule ^(.*)$ public/
