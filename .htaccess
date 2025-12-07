@@ -1,10 +1,8 @@
 # Activer la réécriture
 RewriteEngine On
 
-# Rediriger tout vers public/
-RewriteRule ^(.*)$ public/$1 [R=302,L]
-
-# Optionnel : interdire l'accès direct aux fichiers restants de public_html
-<FilesMatch ".*">
-    Require all denied
-</FilesMatch>
+# Redirection interne vers le dossier public sans changer l'URL
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/$1 [L]

@@ -1,6 +1,6 @@
 RewriteEngine On
 
-# Si le fichier ou dossier existe, ne rien faire (CSS, JS, images, create.php, edit.php, etc.)
+# Si le fichier ou dossier existe, ne rien faire
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
