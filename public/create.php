@@ -136,7 +136,7 @@ session_start();
                         </div>
                         <div class="mb-3">
                             <label for="rating">Note / 5</label>
-                            <input type="number" step=".5" min="0" max="5" id="rating" name="rating" class="form-control" value="<?= isset($_SESSION['old']['rating']) ? htmlspecialchars($_SESSION['old']['rating']) : ''; unset($_SESSION['old']['rating']); ?>">
+                            <input inputmode="decimal" type="number" step=".5" min="0" max="5" id="rating" name="rating" class="form-control" value="<?= isset($_SESSION['old']['rating']) ? htmlspecialchars($_SESSION['old']['rating']) : ''; unset($_SESSION['old']['rating']); ?>">
                         </div>
                         <div class="mb-3">
                             <label for="comment">Laissez un commentaire</label>
