@@ -11,5 +11,5 @@ DirectoryIndex index.php
 # 2. Redirection des requêtes vers index.php si le fichier ou dossier n'existe pas
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.php [L]
+RewriteRule ^(.*)$ index.php [L]
 # ----------------------------
