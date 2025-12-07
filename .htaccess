@@ -1,9 +1,6 @@
 # Activer la réécriture
 RewriteEngine On
 
-# Si la requête pointe déjà vers public/, ne rien faire
-RewriteCond %{REQUEST_URI} !^/public/
-
 # Rediriger tout vers public/
 RewriteRule ^(.*)$ public/$1 [R=302,L]
 
