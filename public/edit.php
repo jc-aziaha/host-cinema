@@ -20,12 +20,13 @@ session_start();
 
     // Vérifier si l'identifiant récupéré correspond à un film existant
     $film = getFilm($filmId);
-    if ($film['rating'] == null) {
-        $film['rating'] = '';
-    }
-    if ($film['comment'] == null) {
-        $film['comment'] = '';
-    }
+    // if ($film['rating'] == null) {
+    //     $film['rating'] = '';
+    // }
+    // if ($film['comment'] == null) {
+    //     $film['comment'] = '';
+    // }
+    // dd($film);
 
     // 1- Si les données du formulaire sont envoyées via la méthode POST
     if ( 'POST' === $_SERVER['REQUEST_METHOD'] ) {
@@ -68,7 +69,7 @@ session_start();
 
             if (!is_numeric($rating)) {
                 $formErrors['rating'] = "La note doit être un nombre.";
-            } elseif($rating < '0' || $rating > '5') {
+            } elseif(floatval($rating) < 0 || floatval($rating) > 5) {
                 $formErrors['rating'] = "La note doit être comprise entre 0 et 5.";
             }
         }
@@ -153,7 +154,7 @@ session_start();
                         </div>
                         <div class="mb-3">
                             <label for="rating">Note / 5</label>
-                            <input inputmode="decimal" type="number" step=".5" min="0" max="5" id="rating" name="rating" class="form-control" value="<?= isset($_SESSION['old']['rating']) ? htmlspecialchars($_SESSION['old']['rating']) : htmlspecialchars((float) $film['rating']); unset($_SESSION['old']['rating']); ?>">
+                            <input inputmode="decimal" type="number" step=".5" min="0" max="5" id="rating" name="rating" class="form-control" value="<?= isset($_SESSION['old']['rating']) ? htmlspecialchars($_SESSION['old']['rating']) : htmlspecialchars((string) $film['rating']); unset($_SESSION['old']['rating']); ?>">
                         </div>
                         <div class="mb-3">
                             <label for="comment">Laissez un commentaire</label>
