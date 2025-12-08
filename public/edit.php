@@ -68,7 +68,7 @@ session_start();
 
             if (!is_numeric($rating)) {
                 $formErrors['rating'] = "La note doit être un nombre.";
-            } else if(floatval($rating) < 0 || floatval($rating) > 5) {
+            } elseif($rating < '0' || $rating > '5') {
                 $formErrors['rating'] = "La note doit être comprise entre 0 et 5.";
             }
         }
