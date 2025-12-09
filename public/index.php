@@ -38,7 +38,7 @@ session_start();
 
                     <?php if(count($films) > 0) : ?>
                         <?php foreach($films as $film) : ?>
-                            <article class="film-card rounded shadow p-3 my-2 bg-white">
+                            <article class="film-card rounded shadow p-3 my-4 bg-white">
                                 <h2>Titre: <?= htmlspecialchars($film['title']); ?></h2>
                                 <p><strong>Note</strong>: <?= $film['rating'] == null ? 'Non renseignée' : displayStars((float) $film['rating']); ?></p>
                                 <hr>
@@ -53,7 +53,6 @@ session_start();
                                     </form>
                                 </div>
                             </article>
-                            <hr>
                         <?php endforeach ?>
                     <?php else : ?>
                         <p class="mt-5 text-center">Aucun film ajouté à la liste.</p>
