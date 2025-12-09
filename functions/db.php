@@ -8,7 +8,7 @@ if (!function_exists('connectToDb')) {
      * @return PDO
      */
     function connectToDb(): PDO {
-        $dsnDb = 'mysql:dbname=dwwm22_cinema;host=127.0.0.1';
+        $dsnDb = 'mysql:dbname=bim;host=127.0.0.1';
         $userDb = 'root';
         $passwordDb = '';
 
