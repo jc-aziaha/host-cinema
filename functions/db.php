@@ -71,7 +71,7 @@ if (!function_exists('getFilm')) {
      *
      * @return array
      */
-    function getFilm(int $filmId): array {
+    function getFilm(int $filmId): bool|array {
         $db = connectToDb();
 
         $req = $db->prepare('SELECT * FROM film WHERE id=:id');

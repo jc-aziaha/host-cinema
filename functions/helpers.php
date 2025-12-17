@@ -46,9 +46,15 @@ if (!function_exists('redirectTo')) {
 if (!function_exists('displayStars')) {
     function displayStars($rating) {
         // Note sur 5, peut être 0.5, 1, 1.5 ...
-        $fullStar = '<i class="fas fa-star" style="color: gold;"></i>';    // étoile pleine
-        $halfStar = '<i class="fas fa-star-half-alt" style="color: gold;"></i>'; // demi-étoile
-        $emptyStar = '<i class="far fa-star" style="color: gold;"></i>';   // étoile vide
+        
+        // étoile pleine
+        $fullStar = '<i class="fas fa-star" style="color: gold;"></i>';    
+        
+        // demi-étoile
+        $halfStar = '<i class="fas fa-star-half-alt" style="color: gold;"></i>'; 
+        
+        // étoile vide
+        $emptyStar = '<i class="far fa-star" style="color: gold;"></i>';   
 
         $stars = "";
         

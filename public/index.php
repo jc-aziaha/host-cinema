@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+    var_dump($_SERVER); die();
+
     require_once __DIR__ . "/../functions/helpers.php";
     require_once __DIR__ . "/../functions/db.php";
     $films = getFilms();
